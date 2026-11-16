@@ -1,0 +1,14 @@
+{
+  "model_calls": 2,
+  "input_tokens": 76582,
+  "cached_input_tokens": 54656,
+  "output_tokens": 1679,
+  "reasoning_output_tokens": 257,
+  "total_tokens": 78261,
+  "complete": true,
+  "native_responses": 6,
+  "native_sessions": 2,
+  "measured_model_calls": 0,
+  "paid_api_calls": 0,
+  "note": "All available INVARIANT worker plus reviewer accounting. Sessions are not response counts; cached input and reasoning output are subsets. Host chat usage is unavailable; no dollar estimate."
+}

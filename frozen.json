@@ -1,0 +1,20 @@
+{
+  "frozen_at_utc": "2026-11-16T09:54:04.849241+00:00",
+  "study_size": 72,
+  "seed": 20261116,
+  "sha256": {
+    "PROTOCOL.md": "7e263f69ab3ee5ad216728fd2574164e336d9d254933d1d085633aef5da2658c",
+    "store.py": "46733d3af31dfc81c43a410a3d82c3a183ddd60c11fe45963a5361374ac132d2",
+    "worker.py": "8fcaf6e9949a24ec9e045efa4b39f633db8644dca3e6a54f1b47646da13df1d9",
+    "harness.py": "d112897c2da4da7a4b6fbd3e555404cc74b3de3143aa232c3a9504efb9d9790f",
+    "audit.py": "29b5e358543bd9cf2615af7b2b749d2df8c7a91950c89810e3ed3f6c96cde741",
+    "make_fixtures.py": "f5f455e1b4f991a03972f8c0d2425830e8e88ae468ed90e99e648f8faabd79db",
+    "fixtures.json": "750a8eb0a0956971ce0096572e40c83ebd781094a98e6eef254e062a8ea18322",
+    "schedule.json": "ae52ddb864f6d4fdb1a3511ce6470ffbd25603ddd109feec9aced3cbf032f899",
+    "tests/run_checks.py": "df610b82e9acaf1b4de452913fd2f4b69c568098a1b8995fd8eba2c830e1162d",
+    "plot.py": "04464c52f3f4b1f735172d8cb9ee89a6b51f92fb969fe02fe1b6373933010ef0",
+    "SOURCES.json": "69647193829b81e648b2f6e7e47d6c19bb7624eb9aa9eb663a6f8a4c0321d67c",
+    "CANDIDATES.json": "f74717dc7a066add33875b28e7360835481a995f4d3ae9aab540e05091845f84",
+    "evidence/environment.json": "8525329823b1b9389f66878b65508d5d3ae24597d12c14becde5904a7606c58d"
+  }
+}

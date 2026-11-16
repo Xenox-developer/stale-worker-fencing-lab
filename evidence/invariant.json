@@ -1,0 +1,193 @@
+{
+  "request_id": "stale-worker-fencing-20261116-v1",
+  "study_id": "study-3302c8a66c5c4efdac901556f587705c",
+  "execution": {
+    "study_id": "study-3302c8a66c5c4efdac901556f587705c",
+    "state": "completed",
+    "receipts": [
+      {
+        "schema_version": 1,
+        "study_id": "study-3302c8a66c5c4efdac901556f587705c",
+        "attempt_id": "attempt-25105e3f641f435fbe9eb14972d39ed1",
+        "definition_digest": "cfcc0f8d2cc87819d7c1ef96b6c1c0e969357cf7042d2cf1cdfa1ef88e8ccb14",
+        "baseline_digest": "ff0feb64a7980b7abf7a15d30d030e1ce1255ac28c834143f8c2730d08ca51a9",
+        "result_digest": "043aef098efe4ed9322596e29cb755c5a202017d2200164b7b9fe1e6850b319f",
+        "state": "succeeded",
+        "passed": true,
+        "evaluation": {
+          "status": "completed",
+          "reason": null,
+          "reused_validation": true,
+          "validation_receipt": "docker-volume://invariant-state-v2/workspaces/cf822477a5832ef27a804e7c/experiments/attempts/attempt-25105e3f641f435fbe9eb14972d39ed1/validations/06fa23d6ae948881964e074430cf35a1b126b6884e32b129f1a8c10507bd485d/receipt.json",
+          "contract_version": "fb35330da2aaf3ea0444e25c8d82a6a1dc43673257bcc7ab702e7818af363aeb",
+          "command": "python3 -B tests/run_checks.py",
+          "test_exit_code": 0,
+          "checks": {
+            "tests": 8,
+            "failures": 0,
+            "errors": 0
+          },
+          "fixed_test_count": 9,
+          "evidence_path": "docker-volume://invariant-state-v2/workspaces/cf822477a5832ef27a804e7c/experiments/attempts/attempt-25105e3f641f435fbe9eb14972d39ed1/evaluation"
+        },
+        "resources": {
+          "expected_digest": "91d37c5e6396c47845558ece35416bfd075a708758985db89ade158ccb50a2d8",
+          "observed_digest": "91d37c5e6396c47845558ece35416bfd075a708758985db89ade158ccb50a2d8"
+        },
+        "inference_usage": {
+          "complete": true,
+          "final": {
+            "cached_input_tokens": 54656,
+            "input_tokens": 69609,
+            "output_tokens": 1533,
+            "reasoning_output_tokens": 172,
+            "total_tokens": 71142
+          },
+          "path": "docker-volume://invariant-state-v2/workspaces/cf822477a5832ef27a804e7c/experiments/attempts/attempt-25105e3f641f435fbe9eb14972d39ed1/runner.usage.jsonl",
+          "problems": [],
+          "reconciled": true,
+          "response_count": 5
+        },
+        "execution_commands": {
+          "provenance": "executor command-completion events; not worker assertions",
+          "commands": [
+            {
+              "command": "/bin/bash -lc 'pwd && ls -la && cat store.py && cat PROTOCOL.md'",
+              "cwd": "/workspace",
+              "status": "completed",
+              "exit_code": 0
+            },
+            {
+              "command": "/bin/bash -lc 'cat tests/run_checks.py && cat worker.py && git status --short'",
+              "cwd": "/workspace",
+              "status": "failed",
+              "exit_code": 128
+            }
+          ],
+          "omitted_commands": 0
+        },
+        "receipt_digest": "026758adff925c72dce17cd9a38631c9bdbfe578148834b9c7e8216c90ed0f7c"
+      }
+    ],
+    "summary": {
+      "scheduled": 1,
+      "runner_successes": 1,
+      "failed": 0,
+      "cancelled": 0,
+      "pending": 0,
+      "evaluated": 1,
+      "missing_evaluations": 0,
+      "quality_passes": 1,
+      "quality_failures": 0,
+      "quality_judged": 1,
+      "missing_quality": 0,
+      "quality_pass_rate_over_scheduled": 1.0
+    },
+    "selection": {
+      "attempt_id": null,
+      "revision": 0
+    },
+    "trials": [
+      {
+        "attempt_id": "attempt-25105e3f641f435fbe9eb14972d39ed1",
+        "variant_id": "medium",
+        "state": "succeeded",
+        "passed": true,
+        "duration_seconds": 63.691784620285034,
+        "reason": "COMPLETED"
+      }
+    ],
+    "trials_omitted": 0,
+    "usage": {
+      "model_calls": 1,
+      "input_tokens": 69609,
+      "cached_input_tokens": 54656,
+      "output_tokens": 1533,
+      "reasoning_output_tokens": 172,
+      "total_tokens": 71142,
+      "complete": true
+    }
+  },
+  "decision": {
+    "state": "completed",
+    "decision": {
+      "approved": true,
+      "reason": "The patch implements the specified SQLite transactions, validation, canonical serialization, fencing, and intentionally unsafe baselines. Only store.py changes, and coordinator-verified invariant_validate evidence confirms all eight fixed acceptance tests passed.",
+      "review_digest": "e34a6471a235b9ab3f7d79cae1d2164b482ce5cab6dc067b09ff0f619792dce2"
+    },
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "usage": {
+      "total": {
+        "totalTokens": 7119,
+        "inputTokens": 6973,
+        "cachedInputTokens": 0,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 146,
+        "reasoningOutputTokens": 85
+      },
+      "last": {
+        "totalTokens": 7119,
+        "inputTokens": 6973,
+        "cachedInputTokens": 0,
+        "cacheWriteInputTokens": 0,
+        "outputTokens": 146,
+        "reasoningOutputTokens": 85
+      },
+      "modelContextWindow": 475000
+    },
+    "inference_usage": {
+      "response_count": 1,
+      "complete": true,
+      "reconciled": true,
+      "problems": [],
+      "path": "docker-volume://invariant-state-v2/workspaces/cf822477a5832ef27a804e7c/tasks/a8f9556651388357d96733d9a05de52cc15bf8256323bfb526268a614048bce0-reviews/e34a6471a235b9ab3f7d79cae1d2164b482ce5cab6dc067b09ff0f619792dce2/usage.jsonl",
+      "final": {
+        "input_tokens": 6973,
+        "cached_input_tokens": 0,
+        "output_tokens": 146,
+        "reasoning_output_tokens": 85,
+        "total_tokens": 7119
+      }
+    }
+  },
+  "usage": {
+    "model_calls": 2,
+    "input_tokens": 76582,
+    "cached_input_tokens": 54656,
+    "output_tokens": 1679,
+    "reasoning_output_tokens": 257,
+    "total_tokens": 78261,
+    "complete": true
+  },
+  "application": {
+    "plan_id": "plan-51c8bf02d0d54bc19e7a4582ebd5169a",
+    "attempt_id": "attempt-25105e3f641f435fbe9eb14972d39ed1",
+    "applied": true,
+    "verification": {
+      "schema_version": 1,
+      "verified": true,
+      "verified_at": 1794822781.9059057,
+      "plan_digest": "ce83b645593896f2220f5c616f3e5e04fa9e4ed2fdacd46d5a206f74700739f5",
+      "result_digest": "043aef098efe4ed9322596e29cb755c5a202017d2200164b7b9fe1e6850b319f",
+      "changed_paths": 1,
+      "written_entries_digest": "ce4999a9a9840d1290bb5bc5f931e3bf67227a0cd9a4e12e73f2a8656ddb2e4d",
+      "protected_inputs": 9,
+      "protected_entries_digest": "9beed5239498d87f61f3f4249c7c982975b2397243c4b1fc1537dc82599fe034"
+    },
+    "container_applied": true,
+    "host_delivery_state": "committed"
+  },
+  "completion_state": "applied",
+  "original_receipt_sha256": "2d771e7488e540593a96310a48dd9aa318dde03acf46a5c78c15713d1666c631",
+  "recovery": {
+    "initial_host_conflict": "audit.py changed by the coordinator during execution; host delivery correctly refused. No primary measurements had begun.",
+    "restored_all_protected_hashes": true,
+    "recovery_request_id": "stale-worker-fencing-20261116-v1",
+    "review_revision": 1,
+    "candidate_result_digest_unchanged": true,
+    "final_host_delivery": "committed, verified",
+    "readiness_recovery_error": "One account/read workspace routing discovery timeout; original request was inspected and recovered, without dispatching a new worker.",
+    "audit_followup": "Only after guarded delivery completed, the independent audit CLI was given replay-directory arguments before the primary freeze. Scientific checks and the store acceptance tests were unchanged."
+  }
+}

@@ -1,0 +1,65 @@
+[
+  {
+    "topic": "Stale workers after lease handoff",
+    "selected": true,
+    "primary_sources": [
+      "https://claude.com/resources/articles/building-always-on-agents",
+      "https://redis.io/docs/latest/develop/clients/patterns/distributed-locks/",
+      "https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html"
+    ],
+    "source_dates": [
+      "2026-11-13",
+      "live documentation checked 2026-11-16",
+      "2016-02-08"
+    ],
+    "claim": "Old workers can commit stale results after handoff; storage-side fencing versus acquiring/checking a lease.",
+    "smallest_test": "72 local SQLite trials: 8 synthetic payload pairs x 3 write policies x 3 controlled schedules.",
+    "baseline": "Acquisition-only; separate precheck.",
+    "metrics": "Stale commits/16, stale final overwrites/16, fresh replacement commits/16, clean commits/8 per mode.",
+    "data": "Authored synthetic payloads and owned child processes.",
+    "resources": "Installed Python/SQLite; INVARIANT/current Codex for implementation; no measured inference.",
+    "runtime": "Minutes of local fault orchestration after implementation.",
+    "limitations": "Logical time, controlled IPC; not Redis or distributed-lock benchmark; no LLM policy evaluation.",
+    "classification": "New local engineering experiment; differs from prior retry/idempotency study by overlapping generations and stale overwrites."
+  },
+  {
+    "topic": "Tenant filtering before versus after vector top-k",
+    "selected": false,
+    "primary_sources": [
+      "https://www.elastic.co/docs/solutions/search/vector/knn/filtered-knn-search"
+    ],
+    "source_dates": [
+      "live documentation checked 2026-11-16"
+    ],
+    "claim": "Post-filtering may return fewer eligible hits than applying tenant scope during selection.",
+    "smallest_test": "Authored vectors across tenants; exact top-k and precision/recall on scoped oracle.",
+    "baseline": "Exact global top-k then tenant filter.",
+    "metrics": "Eligible recall@k and returned count; no engine speed claims.",
+    "data": "Synthetic owned vectors.",
+    "resources": "Python stdlib; INVARIANT implementation.",
+    "runtime": "Minutes.",
+    "limitations": "Known selection property; not production ANN benchmark and less novel than chosen concurrency question.",
+    "classification": "Local deterministic counterexample, deferred."
+  },
+  {
+    "topic": "Context compaction and preserved obligations",
+    "selected": false,
+    "primary_sources": [
+      "https://www.microsoft.com/en-us/research/wp-content/uploads/2026/10/CompactionBench_preprint.pdf",
+      "https://www.anthropic.com/research/effective-context-engineering-for-ai-agents"
+    ],
+    "source_dates": [
+      "2026-10 preprint path, exact release day not established",
+      "2025-09-29"
+    ],
+    "claim": "Compaction changes which prior constraints survive long agent sessions.",
+    "smallest_test": "Paired synthetic traces with exact obligations and fixed extractive compaction.",
+    "baseline": "Full trace versus fixed compacted trace.",
+    "metrics": "Obligation retrieval and task correctness, tokens; preregister before any execution.",
+    "data": "Would need independently authored balanced traces and robust scorer.",
+    "resources": "Installed local models only; cannot reproduce frontier production benchmark.",
+    "runtime": "Tens of minutes or more.",
+    "limitations": "Strong model/fixture dependence; more preparation needed for valid controls.",
+    "classification": "Possible pilot, deferred; no claimed paper reproduction."
+  }
+]

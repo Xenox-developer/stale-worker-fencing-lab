@@ -1,0 +1,106 @@
+[
+  {
+    "id": "p0",
+    "old": {
+      "revision": 0,
+      "status": "old",
+      "body": "plain"
+    },
+    "new": {
+      "revision": 100,
+      "status": "new",
+      "body": "plain updated"
+    }
+  },
+  {
+    "id": "p1",
+    "old": {
+      "revision": 1,
+      "status": "old",
+      "body": "with spaces"
+    },
+    "new": {
+      "revision": 101,
+      "status": "new",
+      "body": "with spaces updated"
+    }
+  },
+  {
+    "id": "p2",
+    "old": {
+      "revision": 2,
+      "status": "old",
+      "body": "Unicode: café"
+    },
+    "new": {
+      "revision": 102,
+      "status": "new",
+      "body": "Unicode: café updated"
+    }
+  },
+  {
+    "id": "p3",
+    "old": {
+      "revision": 3,
+      "status": "old",
+      "body": "JSON: {}"
+    },
+    "new": {
+      "revision": 103,
+      "status": "new",
+      "body": "JSON: {} updated"
+    }
+  },
+  {
+    "id": "p4",
+    "old": {
+      "revision": 4,
+      "status": "old",
+      "body": "line\nbreak"
+    },
+    "new": {
+      "revision": 104,
+      "status": "new",
+      "body": "line\nbreak updated"
+    }
+  },
+  {
+    "id": "p5",
+    "old": {
+      "revision": 5,
+      "status": "old",
+      "body": "quote: \""
+    },
+    "new": {
+      "revision": 105,
+      "status": "new",
+      "body": "quote: \" updated"
+    }
+  },
+  {
+    "id": "p6",
+    "old": {
+      "revision": 6,
+      "status": "old",
+      "body": "empty-array: []"
+    },
+    "new": {
+      "revision": 106,
+      "status": "new",
+      "body": "empty-array: [] updated"
+    }
+  },
+  {
+    "id": "p7",
+    "old": {
+      "revision": 7,
+      "status": "old",
+      "body": "path/a/b"
+    },
+    "new": {
+      "revision": 107,
+      "status": "new",
+      "body": "path/a/b updated"
+    }
+  }
+]

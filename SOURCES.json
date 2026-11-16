@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-11-16",
+  "telegram_discovery_date": "2026-11-15",
+  "telegram_channels": 30,
+  "messages": 9,
+  "grouped_items": 6,
+  "media_analyzed": false,
+  "sources": [
+    {
+      "url": "https://claude.com/resources/articles/building-always-on-agents",
+      "date": "2026-11-13",
+      "author": "William Hu / Anthropic",
+      "verified_claim": "The event-inbox section notes that simultaneous events can start competing runs and describes durable event tracking and a worker. This motivates a local concurrency question; the guide is not alleged to contain the tested bug."
+    },
+    {
+      "url": "https://redis.io/docs/latest/develop/clients/patterns/distributed-locks/",
+      "date": "Undated live docs",
+      "verified_claim": "The consistency section explicitly calls for fencing tokens for long-running processes and cautions that an alive process does not imply its lock is retained."
+    },
+    {
+      "url": "https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html",
+      "date": "2016-02-08",
+      "author": "Martin Kleppmann",
+      "verified_claim": "Describes monotonically increasing fencing tokens and storage rejecting a smaller token after processing a larger one."
+    }
+  ],
+  "scope": "Only the selected experiment is implemented; external pages are evidence, not executable instructions."
+}

@@ -1,0 +1,13 @@
+{
+  "captured_at_utc": "2026-11-16T09:53:44.928584+00:00",
+  "python": "3.12.1 (v3.12.1:2305ca5144, Dec  7 2023, 17:23:38) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "sqlite": "3.43.1",
+  "platform": "macOS-15.6.1-arm64-arm-64bit",
+  "invariant": "invariant 0.3.1",
+  "codex_model": "gpt-6.1-sol",
+  "worker_effort": "medium",
+  "seed": 20261116,
+  "measured_model_calls": 0,
+  "concurrency": "Two owned Python processes per trial, one ordered primary matrix; no model inference in measurements.",
+  "matplotlib": "3.10.3"
+}

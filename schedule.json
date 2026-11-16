@@ -1,0 +1,434 @@
+[
+  {
+    "id": "p5-lease_only-handoff_after_check",
+    "fixture": "p5",
+    "mode": "lease_only",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p0-fenced-handoff_after_check",
+    "fixture": "p0",
+    "mode": "fenced",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p3-precheck-handoff_before_check",
+    "fixture": "p3",
+    "mode": "precheck",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p1-lease_only-clean",
+    "fixture": "p1",
+    "mode": "lease_only",
+    "scenario": "clean"
+  },
+  {
+    "id": "p2-lease_only-handoff_before_check",
+    "fixture": "p2",
+    "mode": "lease_only",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p7-lease_only-clean",
+    "fixture": "p7",
+    "mode": "lease_only",
+    "scenario": "clean"
+  },
+  {
+    "id": "p2-precheck-clean",
+    "fixture": "p2",
+    "mode": "precheck",
+    "scenario": "clean"
+  },
+  {
+    "id": "p5-lease_only-handoff_before_check",
+    "fixture": "p5",
+    "mode": "lease_only",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p7-lease_only-handoff_after_check",
+    "fixture": "p7",
+    "mode": "lease_only",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p4-lease_only-handoff_before_check",
+    "fixture": "p4",
+    "mode": "lease_only",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p6-lease_only-clean",
+    "fixture": "p6",
+    "mode": "lease_only",
+    "scenario": "clean"
+  },
+  {
+    "id": "p1-lease_only-handoff_before_check",
+    "fixture": "p1",
+    "mode": "lease_only",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p3-fenced-handoff_before_check",
+    "fixture": "p3",
+    "mode": "fenced",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p2-lease_only-clean",
+    "fixture": "p2",
+    "mode": "lease_only",
+    "scenario": "clean"
+  },
+  {
+    "id": "p2-lease_only-handoff_after_check",
+    "fixture": "p2",
+    "mode": "lease_only",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p7-fenced-handoff_after_check",
+    "fixture": "p7",
+    "mode": "fenced",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p6-fenced-handoff_after_check",
+    "fixture": "p6",
+    "mode": "fenced",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p7-precheck-clean",
+    "fixture": "p7",
+    "mode": "precheck",
+    "scenario": "clean"
+  },
+  {
+    "id": "p0-precheck-clean",
+    "fixture": "p0",
+    "mode": "precheck",
+    "scenario": "clean"
+  },
+  {
+    "id": "p3-precheck-clean",
+    "fixture": "p3",
+    "mode": "precheck",
+    "scenario": "clean"
+  },
+  {
+    "id": "p6-precheck-clean",
+    "fixture": "p6",
+    "mode": "precheck",
+    "scenario": "clean"
+  },
+  {
+    "id": "p3-lease_only-handoff_before_check",
+    "fixture": "p3",
+    "mode": "lease_only",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p1-fenced-handoff_after_check",
+    "fixture": "p1",
+    "mode": "fenced",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p4-lease_only-handoff_after_check",
+    "fixture": "p4",
+    "mode": "lease_only",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p0-precheck-handoff_before_check",
+    "fixture": "p0",
+    "mode": "precheck",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p6-lease_only-handoff_before_check",
+    "fixture": "p6",
+    "mode": "lease_only",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p0-fenced-clean",
+    "fixture": "p0",
+    "mode": "fenced",
+    "scenario": "clean"
+  },
+  {
+    "id": "p0-precheck-handoff_after_check",
+    "fixture": "p0",
+    "mode": "precheck",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p6-fenced-clean",
+    "fixture": "p6",
+    "mode": "fenced",
+    "scenario": "clean"
+  },
+  {
+    "id": "p5-fenced-handoff_after_check",
+    "fixture": "p5",
+    "mode": "fenced",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p1-precheck-clean",
+    "fixture": "p1",
+    "mode": "precheck",
+    "scenario": "clean"
+  },
+  {
+    "id": "p4-fenced-clean",
+    "fixture": "p4",
+    "mode": "fenced",
+    "scenario": "clean"
+  },
+  {
+    "id": "p7-fenced-clean",
+    "fixture": "p7",
+    "mode": "fenced",
+    "scenario": "clean"
+  },
+  {
+    "id": "p6-fenced-handoff_before_check",
+    "fixture": "p6",
+    "mode": "fenced",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p7-precheck-handoff_after_check",
+    "fixture": "p7",
+    "mode": "precheck",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p1-lease_only-handoff_after_check",
+    "fixture": "p1",
+    "mode": "lease_only",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p1-precheck-handoff_before_check",
+    "fixture": "p1",
+    "mode": "precheck",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p4-precheck-clean",
+    "fixture": "p4",
+    "mode": "precheck",
+    "scenario": "clean"
+  },
+  {
+    "id": "p0-fenced-handoff_before_check",
+    "fixture": "p0",
+    "mode": "fenced",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p3-lease_only-handoff_after_check",
+    "fixture": "p3",
+    "mode": "lease_only",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p2-fenced-handoff_before_check",
+    "fixture": "p2",
+    "mode": "fenced",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p5-precheck-handoff_after_check",
+    "fixture": "p5",
+    "mode": "precheck",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p5-fenced-handoff_before_check",
+    "fixture": "p5",
+    "mode": "fenced",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p1-precheck-handoff_after_check",
+    "fixture": "p1",
+    "mode": "precheck",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p0-lease_only-handoff_after_check",
+    "fixture": "p0",
+    "mode": "lease_only",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p5-lease_only-clean",
+    "fixture": "p5",
+    "mode": "lease_only",
+    "scenario": "clean"
+  },
+  {
+    "id": "p1-fenced-handoff_before_check",
+    "fixture": "p1",
+    "mode": "fenced",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p5-precheck-handoff_before_check",
+    "fixture": "p5",
+    "mode": "precheck",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p2-precheck-handoff_before_check",
+    "fixture": "p2",
+    "mode": "precheck",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p3-fenced-handoff_after_check",
+    "fixture": "p3",
+    "mode": "fenced",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p7-fenced-handoff_before_check",
+    "fixture": "p7",
+    "mode": "fenced",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p6-precheck-handoff_after_check",
+    "fixture": "p6",
+    "mode": "precheck",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p6-lease_only-handoff_after_check",
+    "fixture": "p6",
+    "mode": "lease_only",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p1-fenced-clean",
+    "fixture": "p1",
+    "mode": "fenced",
+    "scenario": "clean"
+  },
+  {
+    "id": "p6-precheck-handoff_before_check",
+    "fixture": "p6",
+    "mode": "precheck",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p2-precheck-handoff_after_check",
+    "fixture": "p2",
+    "mode": "precheck",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p4-lease_only-clean",
+    "fixture": "p4",
+    "mode": "lease_only",
+    "scenario": "clean"
+  },
+  {
+    "id": "p4-precheck-handoff_before_check",
+    "fixture": "p4",
+    "mode": "precheck",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p3-precheck-handoff_after_check",
+    "fixture": "p3",
+    "mode": "precheck",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p3-fenced-clean",
+    "fixture": "p3",
+    "mode": "fenced",
+    "scenario": "clean"
+  },
+  {
+    "id": "p5-precheck-clean",
+    "fixture": "p5",
+    "mode": "precheck",
+    "scenario": "clean"
+  },
+  {
+    "id": "p0-lease_only-clean",
+    "fixture": "p0",
+    "mode": "lease_only",
+    "scenario": "clean"
+  },
+  {
+    "id": "p4-fenced-handoff_after_check",
+    "fixture": "p4",
+    "mode": "fenced",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p2-fenced-clean",
+    "fixture": "p2",
+    "mode": "fenced",
+    "scenario": "clean"
+  },
+  {
+    "id": "p7-precheck-handoff_before_check",
+    "fixture": "p7",
+    "mode": "precheck",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p0-lease_only-handoff_before_check",
+    "fixture": "p0",
+    "mode": "lease_only",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p4-precheck-handoff_after_check",
+    "fixture": "p4",
+    "mode": "precheck",
+    "scenario": "handoff_after_check"
+  },
+  {
+    "id": "p7-lease_only-handoff_before_check",
+    "fixture": "p7",
+    "mode": "lease_only",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p4-fenced-handoff_before_check",
+    "fixture": "p4",
+    "mode": "fenced",
+    "scenario": "handoff_before_check"
+  },
+  {
+    "id": "p5-fenced-clean",
+    "fixture": "p5",
+    "mode": "fenced",
+    "scenario": "clean"
+  },
+  {
+    "id": "p3-lease_only-clean",
+    "fixture": "p3",
+    "mode": "lease_only",
+    "scenario": "clean"
+  },
+  {
+    "id": "p2-fenced-handoff_after_check",
+    "fixture": "p2",
+    "mode": "fenced",
+    "scenario": "handoff_after_check"
+  }
+]
