@@ -1,0 +1,8 @@
+{
+  "measured_implementation_commit": "43b160ef4060ab6a9eda1592a18cf4b6486d262d",
+  "native_store_sha256": "46733d3af31dfc81c43a410a3d82c3a183ddd60c11fe45963a5361374ac132d2",
+  "frozen_sha256": "2b26334c883107a5aa49842d3ff30511751f58f24b5420ebba727df0c539a46e",
+  "primary_run_sha256": "eab2aefb361f16c6c21aafc87db0e3aa0ba0ba4b4c91b1183d431450ca15b311",
+  "post_sha256": "3164154885884c77b3605ad41ea7c208a56e966920c15c2439419656fc1fd7a6",
+  "note": "The release commit containing these measurements is identified by Git HEAD/remote; this file records the premeasurement tested commit, not a circular self hash."
+}

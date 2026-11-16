@@ -1,0 +1,290 @@
+{
+  "cell": {
+    "id": "p3-precheck-handoff_before_check",
+    "fixture": "p3",
+    "mode": "precheck",
+    "scenario": "handoff_before_check"
+  },
+  "events": [
+    {
+      "worker": "A",
+      "request": {
+        "op": "acquire",
+        "args": [
+          "A",
+          0,
+          10
+        ]
+      },
+      "raw_response": "{\"pid\": 26426, \"value\": 1}\n",
+      "response": {
+        "pid": 26426,
+        "value": 1
+      },
+      "snapshot": {
+        "lease": [
+          [
+            1,
+            1,
+            "A",
+            10
+          ]
+        ],
+        "resource": [
+          [
+            1,
+            0,
+            null
+          ]
+        ],
+        "writes": []
+      }
+    },
+    {
+      "worker": "B",
+      "request": {
+        "op": "acquire",
+        "args": [
+          "B",
+          11,
+          10
+        ]
+      },
+      "raw_response": "{\"pid\": 26427, \"value\": 2}\n",
+      "response": {
+        "pid": 26427,
+        "value": 2
+      },
+      "snapshot": {
+        "lease": [
+          [
+            1,
+            2,
+            "B",
+            21
+          ]
+        ],
+        "resource": [
+          [
+            1,
+            0,
+            null
+          ]
+        ],
+        "writes": []
+      }
+    },
+    {
+      "worker": "B",
+      "request": {
+        "op": "prepare",
+        "args": [
+          "precheck",
+          "B",
+          2,
+          12
+        ]
+      },
+      "raw_response": "{\"pid\": 26427, \"value\": true}\n",
+      "response": {
+        "pid": 26427,
+        "value": true
+      },
+      "snapshot": {
+        "lease": [
+          [
+            1,
+            2,
+            "B",
+            21
+          ]
+        ],
+        "resource": [
+          [
+            1,
+            0,
+            null
+          ]
+        ],
+        "writes": []
+      }
+    },
+    {
+      "worker": "B",
+      "request": {
+        "op": "commit",
+        "args": [
+          "precheck",
+          "B",
+          2,
+          {
+            "revision": 103,
+            "status": "new",
+            "body": "JSON: {} updated"
+          },
+          true
+        ]
+      },
+      "raw_response": "{\"pid\": 26427, \"value\": true}\n",
+      "response": {
+        "pid": 26427,
+        "value": true
+      },
+      "snapshot": {
+        "lease": [
+          [
+            1,
+            2,
+            "B",
+            21
+          ]
+        ],
+        "resource": [
+          [
+            1,
+            2,
+            "{\"body\":\"JSON: {} updated\",\"revision\":103,\"status\":\"new\"}"
+          ]
+        ],
+        "writes": [
+          [
+            1,
+            "B",
+            2,
+            "{\"body\":\"JSON: {} updated\",\"revision\":103,\"status\":\"new\"}"
+          ]
+        ]
+      }
+    },
+    {
+      "worker": "A",
+      "request": {
+        "op": "prepare",
+        "args": [
+          "precheck",
+          "A",
+          1,
+          12
+        ]
+      },
+      "raw_response": "{\"pid\": 26426, \"value\": false}\n",
+      "response": {
+        "pid": 26426,
+        "value": false
+      },
+      "snapshot": {
+        "lease": [
+          [
+            1,
+            2,
+            "B",
+            21
+          ]
+        ],
+        "resource": [
+          [
+            1,
+            2,
+            "{\"body\":\"JSON: {} updated\",\"revision\":103,\"status\":\"new\"}"
+          ]
+        ],
+        "writes": [
+          [
+            1,
+            "B",
+            2,
+            "{\"body\":\"JSON: {} updated\",\"revision\":103,\"status\":\"new\"}"
+          ]
+        ]
+      }
+    },
+    {
+      "worker": "A",
+      "request": {
+        "op": "commit",
+        "args": [
+          "precheck",
+          "A",
+          1,
+          {
+            "revision": 3,
+            "status": "old",
+            "body": "JSON: {}"
+          },
+          false
+        ]
+      },
+      "raw_response": "{\"pid\": 26426, \"value\": false}\n",
+      "response": {
+        "pid": 26426,
+        "value": false
+      },
+      "snapshot": {
+        "lease": [
+          [
+            1,
+            2,
+            "B",
+            21
+          ]
+        ],
+        "resource": [
+          [
+            1,
+            2,
+            "{\"body\":\"JSON: {} updated\",\"revision\":103,\"status\":\"new\"}"
+          ]
+        ],
+        "writes": [
+          [
+            1,
+            "B",
+            2,
+            "{\"body\":\"JSON: {} updated\",\"revision\":103,\"status\":\"new\"}"
+          ]
+        ]
+      }
+    }
+  ],
+  "final": {
+    "lease": [
+      [
+        1,
+        2,
+        "B",
+        21
+      ]
+    ],
+    "resource": [
+      [
+        1,
+        2,
+        "{\"body\":\"JSON: {} updated\",\"revision\":103,\"status\":\"new\"}"
+      ]
+    ],
+    "writes": [
+      [
+        1,
+        "B",
+        2,
+        "{\"body\":\"JSON: {} updated\",\"revision\":103,\"status\":\"new\"}"
+      ]
+    ]
+  },
+  "workers": {
+    "A": {
+      "pid": 26426,
+      "exit_code": 0
+    },
+    "B": {
+      "pid": 26427,
+      "exit_code": 0
+    }
+  },
+  "outcomes": {
+    "stale_commit": false,
+    "stale_final": false,
+    "replacement_success": true,
+    "clean_success": false
+  }
+}

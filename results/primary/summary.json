@@ -1,0 +1,41 @@
+{
+  "lease_only": {
+    "stale_commit": 16,
+    "stale_final": 16,
+    "replacement_success": 16,
+    "clean_success": 8,
+    "trials": 24,
+    "handoffs": 16,
+    "clean": 8,
+    "stale_by_scenario": {
+      "handoff_before_check": 8,
+      "handoff_after_check": 8
+    }
+  },
+  "precheck": {
+    "stale_commit": 8,
+    "stale_final": 8,
+    "replacement_success": 16,
+    "clean_success": 8,
+    "trials": 24,
+    "handoffs": 16,
+    "clean": 8,
+    "stale_by_scenario": {
+      "handoff_before_check": 0,
+      "handoff_after_check": 8
+    }
+  },
+  "fenced": {
+    "stale_commit": 0,
+    "stale_final": 0,
+    "replacement_success": 16,
+    "clean_success": 8,
+    "trials": 24,
+    "handoffs": 16,
+    "clean": 8,
+    "stale_by_scenario": {
+      "handoff_before_check": 0,
+      "handoff_after_check": 0
+    }
+  }
+}

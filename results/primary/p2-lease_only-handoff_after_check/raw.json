@@ -1,0 +1,295 @@
+{
+  "cell": {
+    "id": "p2-lease_only-handoff_after_check",
+    "fixture": "p2",
+    "mode": "lease_only",
+    "scenario": "handoff_after_check"
+  },
+  "events": [
+    {
+      "worker": "A",
+      "request": {
+        "op": "acquire",
+        "args": [
+          "A",
+          0,
+          10
+        ]
+      },
+      "raw_response": "{\"pid\": 26459, \"value\": 1}\n",
+      "response": {
+        "pid": 26459,
+        "value": 1
+      },
+      "snapshot": {
+        "lease": [
+          [
+            1,
+            1,
+            "A",
+            10
+          ]
+        ],
+        "resource": [
+          [
+            1,
+            0,
+            null
+          ]
+        ],
+        "writes": []
+      }
+    },
+    {
+      "worker": "A",
+      "request": {
+        "op": "prepare",
+        "args": [
+          "lease_only",
+          "A",
+          1,
+          1
+        ]
+      },
+      "raw_response": "{\"pid\": 26459, \"value\": true}\n",
+      "response": {
+        "pid": 26459,
+        "value": true
+      },
+      "snapshot": {
+        "lease": [
+          [
+            1,
+            1,
+            "A",
+            10
+          ]
+        ],
+        "resource": [
+          [
+            1,
+            0,
+            null
+          ]
+        ],
+        "writes": []
+      }
+    },
+    {
+      "worker": "B",
+      "request": {
+        "op": "acquire",
+        "args": [
+          "B",
+          11,
+          10
+        ]
+      },
+      "raw_response": "{\"pid\": 26461, \"value\": 2}\n",
+      "response": {
+        "pid": 26461,
+        "value": 2
+      },
+      "snapshot": {
+        "lease": [
+          [
+            1,
+            2,
+            "B",
+            21
+          ]
+        ],
+        "resource": [
+          [
+            1,
+            0,
+            null
+          ]
+        ],
+        "writes": []
+      }
+    },
+    {
+      "worker": "B",
+      "request": {
+        "op": "prepare",
+        "args": [
+          "lease_only",
+          "B",
+          2,
+          12
+        ]
+      },
+      "raw_response": "{\"pid\": 26461, \"value\": true}\n",
+      "response": {
+        "pid": 26461,
+        "value": true
+      },
+      "snapshot": {
+        "lease": [
+          [
+            1,
+            2,
+            "B",
+            21
+          ]
+        ],
+        "resource": [
+          [
+            1,
+            0,
+            null
+          ]
+        ],
+        "writes": []
+      }
+    },
+    {
+      "worker": "B",
+      "request": {
+        "op": "commit",
+        "args": [
+          "lease_only",
+          "B",
+          2,
+          {
+            "revision": 102,
+            "status": "new",
+            "body": "Unicode: café updated"
+          },
+          true
+        ]
+      },
+      "raw_response": "{\"pid\": 26461, \"value\": true}\n",
+      "response": {
+        "pid": 26461,
+        "value": true
+      },
+      "snapshot": {
+        "lease": [
+          [
+            1,
+            2,
+            "B",
+            21
+          ]
+        ],
+        "resource": [
+          [
+            1,
+            2,
+            "{\"body\":\"Unicode: café updated\",\"revision\":102,\"status\":\"new\"}"
+          ]
+        ],
+        "writes": [
+          [
+            1,
+            "B",
+            2,
+            "{\"body\":\"Unicode: café updated\",\"revision\":102,\"status\":\"new\"}"
+          ]
+        ]
+      }
+    },
+    {
+      "worker": "A",
+      "request": {
+        "op": "commit",
+        "args": [
+          "lease_only",
+          "A",
+          1,
+          {
+            "revision": 2,
+            "status": "old",
+            "body": "Unicode: café"
+          },
+          true
+        ]
+      },
+      "raw_response": "{\"pid\": 26459, \"value\": true}\n",
+      "response": {
+        "pid": 26459,
+        "value": true
+      },
+      "snapshot": {
+        "lease": [
+          [
+            1,
+            2,
+            "B",
+            21
+          ]
+        ],
+        "resource": [
+          [
+            1,
+            1,
+            "{\"body\":\"Unicode: café\",\"revision\":2,\"status\":\"old\"}"
+          ]
+        ],
+        "writes": [
+          [
+            1,
+            "B",
+            2,
+            "{\"body\":\"Unicode: café updated\",\"revision\":102,\"status\":\"new\"}"
+          ],
+          [
+            2,
+            "A",
+            1,
+            "{\"body\":\"Unicode: café\",\"revision\":2,\"status\":\"old\"}"
+          ]
+        ]
+      }
+    }
+  ],
+  "final": {
+    "lease": [
+      [
+        1,
+        2,
+        "B",
+        21
+      ]
+    ],
+    "resource": [
+      [
+        1,
+        1,
+        "{\"body\":\"Unicode: café\",\"revision\":2,\"status\":\"old\"}"
+      ]
+    ],
+    "writes": [
+      [
+        1,
+        "B",
+        2,
+        "{\"body\":\"Unicode: café updated\",\"revision\":102,\"status\":\"new\"}"
+      ],
+      [
+        2,
+        "A",
+        1,
+        "{\"body\":\"Unicode: café\",\"revision\":2,\"status\":\"old\"}"
+      ]
+    ]
+  },
+  "workers": {
+    "A": {
+      "pid": 26459,
+      "exit_code": 0
+    },
+    "B": {
+      "pid": 26461,
+      "exit_code": 0
+    }
+  },
+  "outcomes": {
+    "stale_commit": true,
+    "stale_final": true,
+    "replacement_success": true,
+    "clean_success": false
+  }
+}

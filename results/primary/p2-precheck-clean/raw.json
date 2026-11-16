@@ -1,0 +1,167 @@
+{
+  "cell": {
+    "id": "p2-precheck-clean",
+    "fixture": "p2",
+    "mode": "precheck",
+    "scenario": "clean"
+  },
+  "events": [
+    {
+      "worker": "A",
+      "request": {
+        "op": "acquire",
+        "args": [
+          "A",
+          0,
+          10
+        ]
+      },
+      "raw_response": "{\"pid\": 26434, \"value\": 1}\n",
+      "response": {
+        "pid": 26434,
+        "value": 1
+      },
+      "snapshot": {
+        "lease": [
+          [
+            1,
+            1,
+            "A",
+            10
+          ]
+        ],
+        "resource": [
+          [
+            1,
+            0,
+            null
+          ]
+        ],
+        "writes": []
+      }
+    },
+    {
+      "worker": "A",
+      "request": {
+        "op": "prepare",
+        "args": [
+          "precheck",
+          "A",
+          1,
+          1
+        ]
+      },
+      "raw_response": "{\"pid\": 26434, \"value\": true}\n",
+      "response": {
+        "pid": 26434,
+        "value": true
+      },
+      "snapshot": {
+        "lease": [
+          [
+            1,
+            1,
+            "A",
+            10
+          ]
+        ],
+        "resource": [
+          [
+            1,
+            0,
+            null
+          ]
+        ],
+        "writes": []
+      }
+    },
+    {
+      "worker": "A",
+      "request": {
+        "op": "commit",
+        "args": [
+          "precheck",
+          "A",
+          1,
+          {
+            "revision": 2,
+            "status": "old",
+            "body": "Unicode: café"
+          },
+          true
+        ]
+      },
+      "raw_response": "{\"pid\": 26434, \"value\": true}\n",
+      "response": {
+        "pid": 26434,
+        "value": true
+      },
+      "snapshot": {
+        "lease": [
+          [
+            1,
+            1,
+            "A",
+            10
+          ]
+        ],
+        "resource": [
+          [
+            1,
+            1,
+            "{\"body\":\"Unicode: café\",\"revision\":2,\"status\":\"old\"}"
+          ]
+        ],
+        "writes": [
+          [
+            1,
+            "A",
+            1,
+            "{\"body\":\"Unicode: café\",\"revision\":2,\"status\":\"old\"}"
+          ]
+        ]
+      }
+    }
+  ],
+  "final": {
+    "lease": [
+      [
+        1,
+        1,
+        "A",
+        10
+      ]
+    ],
+    "resource": [
+      [
+        1,
+        1,
+        "{\"body\":\"Unicode: café\",\"revision\":2,\"status\":\"old\"}"
+      ]
+    ],
+    "writes": [
+      [
+        1,
+        "A",
+        1,
+        "{\"body\":\"Unicode: café\",\"revision\":2,\"status\":\"old\"}"
+      ]
+    ]
+  },
+  "workers": {
+    "A": {
+      "pid": 26434,
+      "exit_code": 0
+    },
+    "B": {
+      "pid": 26435,
+      "exit_code": 0
+    }
+  },
+  "outcomes": {
+    "stale_commit": false,
+    "stale_final": false,
+    "replacement_success": false,
+    "clean_success": true
+  }
+}

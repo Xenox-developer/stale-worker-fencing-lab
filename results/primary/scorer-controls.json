@@ -1,0 +1,6 @@
+{
+  "positive": true,
+  "negative": true,
+  "missing_event_rejected": true,
+  "malformed_response_rejected": true
+}

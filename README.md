@@ -32,11 +32,27 @@ python3 plot.py
 
 The runner refuses an existing output directory. Choose a fresh directory for another explicitly requested replay; preserve old runs. The checked-in primary run is never overwritten. `make_fixtures.py` regenerates the fixed fixtures and deterministic order with seed 20261116. `frozen.json` records hashes for scientific files before measurement. `evidence/release.json` records the measured implementation commit. Data and source code are authored synthetic material under the included MIT license; source pages are referenced, not redistributed.
 
+## Measured results
+
+| Policy | Stale commits after replacement | Replacement commits | Clean commits |
+|---|---:|---:|---:|
+| Lease acquisition only | 16/16 | 16/16 | 8/8 |
+| Separate ownership check | 8/16 | 16/16 | 8/8 |
+| Storage-side fencing | 0/16 | 16/16 | 8/8 |
+
+Every accepted stale commit also left the stale payload as the final resource value. The separate precheck rejected the old worker in all 8 handoff-before-check cases, but accepted its old prepared write in all 8 handoff-after-check cases. The fenced condition rejected both handoff schedules. There were no missing cells, unexpected worker exits, nonempty worker stderr or database integrity errors. All 72 trials and 13 frozen file hashes passed the separate audit; the fixed acceptance suite passed 8/8.
+
+![Stale, replacement and clean commit counts](results/fencing.png)
+
+Chart alt text: For lease-only, separate precheck and storage-side fencing respectively, stale commits were 16/16, 8/16 and 0/16. Replacement writes were 16/16 for every policy, and clean writes were 8/8 for every policy. Exact per-case rows are in results/primary/.
+
+The checked-in PNG/SVG were rendered from `results/audit.json` by `plot.py`, with no statistical intervals, smoothing or data-dependent case selection. Equal payload variants cover serialization formats; they do not increase the number of distinct fault schedules.
+
 ## Evidence and tooling
 
 `results/primary/` contains every command/request, raw response, PID, child exit code/stderr, database snapshot and final SQLite database. `results/primary/summary.json` is the primary scorer output. `audit.py` imports neither `store.py` nor `harness.py`; it reconstructs the schedule and event chronology, validates every persisted transition and final database, checks all frozen hashes, and independently counts outcomes. Positive, negative, missing-event and malformed-response scorer controls ran before the matrix.
 
-[INVARIANT](https://github.com/Xenox-developer/invariant) 0.3.1 coordinated the Codex implementation of `store.py`, the protected eight-test acceptance suite, semantic review and guarded application. The host harness then executed the measured processes. No LLM responses were measured. `evidence/invariant.json` preserves actual IDs, execution/validation receipts, application verification and complete available usage; `evidence/usage.json` summarizes that accounting without interpreting subscription tokens as dollars. Raw private tool output remains outside the public repository. The public receipt retains relevant execution witnesses; private machine/account state is not part of this repository.
+[INVARIANT](https://github.com/Xenox-developer/invariant) 0.3.1 coordinated the Codex implementation of `store.py`, the protected eight-test acceptance suite, semantic review and guarded application. The host harness then executed the measured processes. No LLM responses were measured. `evidence/invariant.json` preserves actual IDs, execution/validation receipts, application verification and complete available usage; `evidence/usage.json` summarizes that accounting without interpreting subscription tokens as dollars. An initial host-delivery conflict correctly preserved a concurrently edited auditor; its original hash was restored and a fresh guarded plan applied the identical reviewed store. This recovery used the original task/attempt and did not dispatch another implementation worker. Replay-directory CLI arguments were added to the separate auditor only after delivery and before the measurement freeze. The public evidence records this history. Raw private tool output remains outside the public repository. The public receipt retains relevant execution witnesses; private machine/account state is not part of this repository.
 
 ## Limitations
 
